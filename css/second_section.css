@@ -1,0 +1,41 @@
+#segunda_sessao {
+    background-color: #f8f9fa!important;
+}
+
+.noticia {
+    margin-bottom: 10%;
+}
+
+.new_title {
+    color: #6c5b7b;
+}
+
+.new_description {
+    color: grey;
+}
+
+.img_noticia {
+   /* height: 40%;*/
+}
+
+.session_heading {
+    width: 100%;
+    text-align: center;
+}
+
+.heading_line {
+    width: 100%;
+    height: 3px;
+}
+
+.ingredientes{
+    /*background-color: rgb(167, 230, 110);*/
+    background-color: #fc6c3f;
+    color: white
+}
+
+.ingredientes:hover{
+    /*background-color: rgb(167, 230, 110);*/
+    background-color: #fc6c3f;
+    color: white
+}
