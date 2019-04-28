@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/first_section.css" rel="stylesheet">
     <link href="css/second_section.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css" />
@@ -19,26 +20,26 @@
 
     <div class="container" style="height: 100vh;">
 
-        <ul style="position: fixed; right: 2%; top: 40%">
-            <li>
+        <ul class="especial_ul" style="position: fixed; right: 2%; top: 40%">
+            <li class="icons">
                 <a class="icon" href="https://www.instagram.com/fastfit_recife/" target="_blank">
                     <i class='fab fa-instagram'></i>
                 </a>
             </li>
 
-            <li>
+            <li class="icons">
                 <a class="icon" href="" target="_blank">
                     <i class='fab fa-facebook'></i>
                 </a>
             </li>
 
-            <li>
+            <li class="icons">
                 <a class="icon" href="" target="_blank">
                     <i class='fab fa-twitter'></i>
                 </a>
             </li>
 
-            <li>
+            <li class="icons">
                 <a class="icon" href="" target="_blank">
                     <i class='fab fa-youtube'></i>
                 </a>
@@ -50,8 +51,38 @@
             <span id="welcome">Bem vindo a Fast Fit</span>
         </div>
 
-        <div class="row justify-content-center" id="navbar">
+        <div class="row justify-content-center" id="navbar_cell">
             <nav class="navbar navbar-expand-sm">
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">HOME</a>
+                    </li>
+
+                    <div class="collapse" id="collapseExample">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cardapio">CARDÁPIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contatos">CONTATOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobre.html">SOBRE</a>
+                        </li>
+                    </div>
+
+                    <li style="position: absolute; right: 5%;" class="nav-item" data-toggle="collapse"
+                        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-navicon" style="font-size: 24px;">
+                        </i>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row justify-content-center" id="navbar_desk">
+            <nav class="navbar navbar-expand-sm d-flex justify-content-center">
                 <!-- Links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -82,6 +113,7 @@
     <div class="container" id="cardapio">
 
         <div class="row">
+
             <div class="col-12">
                 <div id="segunda_sessao_header">
 
@@ -91,84 +123,435 @@
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="images/IMG_2017.JPG" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Salada Tropical <span style="position: absolute; right: 3%"><strong>R$
-                                    0.00</strong></span></p>
-                        <button type="button" class="btn ingredientes" data-toggle="modal" data-target="#exampleModal">
-                            Ver ingredientes
-                        </button>
+        <div id="itens_cardapio">
+
+            <div id="menu_cardapio" class="row mt-2">
+                <div class="col-12 d-flex justify-content-center">
+                    <div>
+                        <button id="menu_salada" type="button" class="btn btn-outline-success mr-3">Saladas</button>
+                        <button id="menu_suco" type="button" class="btn btn-outline-warning mr-3">Sucos</button>
+                        <button type="button" class="btn btn-outline-info mr-3">Outros</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Comida de vaca - ingredientes</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+
+            <div id="saladas" class="row mt-4 inline">
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/IMG_2017.JPG" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Salada Tropical <span style="position: absolute; right: 3%"><strong>R$
+                                        12,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#salada_tropical">
+                                Ver ingredientes
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <ul>
-                                <li>Mato</li>
-                                <li>Mato</li>
-                                <li>Mato</li>
-                            </ul>
+                    </div>
+                </div>
+
+
+                <div class="modal fade" id="salada_tropical" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Salada Tropical - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Mix de folhas (alface, couve e repolho)</li>
+                                    <li>Cenoura ralada</li>
+                                    <li>Abacaxi</li>
+                                    <li>Gergelim</li>
+                                    <li>Manjericão</li>
+                                    <li>Tomate</li>
+                                    <li>Cereja</li>
+                                    <li>Cubo de queijo mussarela</li>
+                                    <li>Castanhas</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
 
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/IMG_2020.JPG" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Salada Simples <span style="position: absolute; right: 3%"><strong>R$
+                                        10,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#salada_simples">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="salada_simples" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Salada Simples - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Mix de folhas (alface, couve e repolho)</li>
+                                    <li>Tomate</li>
+                                    <li>Pepino</li>
+                                    <li>Cebola</li>
+                                    <li>Cenoura ralada</li>
+                                    <li>Beterraba ralada</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/IMG_2021.JPG" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Salada de Batata Doce <span
+                                    style="position: absolute; right: 3%"><strong>R$ 14,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#salada_batata_doce">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="salada_batata_doce" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Salada de batata doce - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Mix de folhas (alface, couve e repolho)</li>
+                                    <li>Ovos cozidos</li>
+                                    <li>Batata doce</li>
+                                    <li>Brócolis</li>
+                                    <li>Frango desfiado</li>
+                                    <li>Cenoura ralada</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/IMG_2023.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Teste <span style="position: absolute; right: 3%"><strong>R$
+                                        0.00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#salada_teste">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="salada_teste" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Teste - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>d</li>
+                                    <li>d</li>
+                                    <li>d</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="sucos" class="row mt-4 none">
+
+                <h6 class="col-12 mb-2 descricao">Sucos detox - 300ml, feitos com água de coco</h6>
+                <h6 class="col-12 mb-4 descricao">Sucos normais - 300ml, sem leite é R$3,00 e com leite R$4,00</h6>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/sucos/detox3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Suco verde (detox)<span
+                                    style="position: absolute; right: 3%"><strong>R$
+                                        5,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#suco_verde">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal fade" id="suco_verde" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Suco verde - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Couve</li>
+                                    <li>Manga</li>
+                                    <li>Gengibre</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/sucos/suco-detox-de-uva.jpg">
+                        <div class="card-body">
+                            <p class="card-text">Suco energético (detox)<span
+                                    style="position: absolute; right: 3%"><strong>R$
+                                        6,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#suco_energetico">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="suco_energetico" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Suco energético - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Uva verde</li>
+                                    <li>Linhaça</li>
+                                    <li>Maçã</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/sucos/melancia.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Suco desincha (detox)<span
+                                    style="position: absolute; right: 3%"><strong>R$
+                                        5,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#suco_desincha">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="suco_desincha" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Suco desincha - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Melância</li>
+                                    <li>Chá de Hibisco</li>
+                                    <li>Linhaça</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/sucos/suco_limao_maca_hortela.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Suco seca barriga (detox)<span
+                                    style="position: absolute; right: 3%"><strong>R$
+                                        5,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal"
+                                data-target="#suco_seca_barriga">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="suco_seca_barriga" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Suco seca barriga - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Maçã</li>
+                                    <li>Couve</li>
+                                    <li>Limão</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/sucos/suco de caja.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Suco de cajá<span style="position: absolute; right: 3%"><strong>R$
+                                        3,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal" data-target="#suco_caja">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="suco_caja" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Suco de cajá - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Poupa de cajá</li>
+                                    <li>Açúcar</li>
+                                    <li>Leite (opcional)</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/sucos/Suco_de_graviola_a_receita_passo_a_passo.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Suco de graviola<span style="position: absolute; right: 3%"><strong>R$
+                                        3,00</strong></span></p>
+                            <button type="button" class="btn ingredientes" data-toggle="modal" data-target="#suco_graviola">
+                                Ver ingredientes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="suco_graviola" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Suco de graviola - ingredientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Poupa de graviola</li>
+                                    <li>Açúcar</li>
+                                    <li>Leite (opcional)</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="images/IMG_2020.JPG" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Salada Simples <span style="position: absolute; right: 3%"><strong>R$
-                                    0.00</strong></span></p>
-                        <button type="button" class="btn ingredientes" data-toggle="modal" data-target="#exampleModal">
-                            Ver ingredientes
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="images/IMG_2021.JPG" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Salada de Batata Doce <span
-                                style="position: absolute; right: 3%"><strong>R$ 0.00</strong></span></p>
-                        <button type="button" class="btn ingredientes" data-toggle="modal" data-target="#exampleModal">
-                            Ver ingredientes
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="images/IMG_2023.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Teste <span style="position: absolute; right: 3%"><strong>R$
-                                    0.00</strong></span></p>
-                        <button type="button" class="btn ingredientes" data-toggle="modal" data-target="#exampleModal">
-                            Ver ingredientes
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -186,18 +569,16 @@
 
         <div class="row">
 
-
-
-            <div class="col-4">
+            <div class="col-12 col-md-4 footer_iten">
 
                 <div class="row">
                     <h4 class="col-12 contato_filho">Contatos</h4>
-                    <span class=" col-12 contato_filho">(81) 98714-5102</span>
+                    <span class="col-12 contato_filho">(81) 98714-5102</span>
                     <span class="col-12 contato_filho">(81) 3438-1280</span>
                 </div>
 
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4 footer_iten">
 
                 <div class="row">
                     <h4 class="col-12 contato_filho">Endereço</h4>
@@ -208,7 +589,7 @@
 
             </div>
 
-            <div class="col-4">
+            <div class="col-12 col-md-4 footer_iten">
                 <h4 class="col-12 contato_filho">Horário de funcionamento</h4>
 
                 <div class="row">
@@ -252,6 +633,10 @@
             /*border: 1px solid black;*/
         }
 
+        .card-img-top{
+            height: 200px !important;
+        }
+
         .contato_filho {
             text-align: center
         }
@@ -273,14 +658,58 @@
             color: black;
         }
 
-        ul {
+        .especial_ul {
             list-style-type: none;
         }
 
-        ul li :hover{
+        .icons :hover {
             font-size: 135%;
         }
 
+        .inline {
+            display: inline-flex;
+        }
+
+        .none {
+            display: none;
+        }
+
+
+        @media (max-width: 576px) {
+            .icons {
+                display: none;
+            }
+
+            .footer_iten {
+                margin-bottom: 4%;
+            }
+
+            #navbar_cell {
+                display: inherit;
+            }
+
+            #navbar_desk {
+                display: none;
+            }
+
+            .descricao {
+                text-align: center
+            }
+        }
+
+        @media (min-width: 576px) {
+            #navbar_cell {
+                display: none;
+            }
+
+            #navbar_desk {
+                display: inherit;
+            }
+
+            .descricao {
+                text-align: center
+            }
+        }
     </style>
 </body>
 <script>
@@ -292,6 +721,34 @@
 
     logo.addEventListener("mouseleave", function () {
         logo.setAttribute("src", "images/logo/Super Sogbu_1.PNG")
+    })
+
+
+    let saladas = document.getElementById("saladas");
+    let sucos = document.getElementById("sucos");
+    let menu_salada = document.getElementById("menu_salada");
+    let menu_suco = document.getElementById("menu_suco");
+
+    function mostrarSaladas() {
+        saladas.setAttribute("class", "row mt-4 inline");
+        sucos.setAttribute("class", "row mt-4 none");
+    }
+
+    function mostrarSucos() {
+        saladas.setAttribute("class", "row mt-4 none");
+        sucos.setAttribute("class", "row mt-4 inline");
+    }
+
+    menu_salada.addEventListener('click', function () {
+        mostrarSaladas();
+        menu_suco.setAttribute("class", "btn btn-outline-warning mr-3");
+        menu_salada.setAttribute("class", "btn btn-success mr-3");
+    })
+
+    menu_suco.addEventListener('click', function () {
+        mostrarSucos();
+        menu_suco.setAttribute("class", "btn btn-warning mr-3");
+        menu_salada.setAttribute("class", "btn btn-outline-success mr-3");
     })
 </script>
 </script>

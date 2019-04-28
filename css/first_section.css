@@ -41,6 +41,10 @@ header .container {
     color: #fc6c3f !important;
 }
 
+.navbar{
+    background-color: lightgoldenrodyellow;
+}
+
 #linha_meio {
     /*padding: 6% 6%;*/
 }
