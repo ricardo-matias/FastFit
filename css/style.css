@@ -1,0 +1,89 @@
+.col-6 {
+    /*border: 1px solid black;*/
+}
+
+.card-img-top {
+    height: 200px !important;
+}
+
+.contato_filho {
+    text-align: center
+}
+
+.fab {
+    font-size: 24px;
+    margin-right: 4%;
+}
+
+.icon {
+    font-size: 24px;
+    margin-right: 4%;
+    color: black;
+}
+
+.fab:visited {
+    font-size: 24px;
+    margin-right: 4%;
+    color: black;
+}
+
+.especial_ul {
+    list-style-type: none;
+}
+
+.icons :hover {
+    font-size: 135%;
+}
+
+.inline {
+    display: inline-flex;
+}
+
+.none {
+    display: none;
+}
+
+#outros{
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .icons {
+        display: none;
+    }
+
+    .footer_iten {
+        margin-bottom: 4%;
+    }
+
+    #navbar_cell {
+        display: inherit;
+    }
+
+    #navbar_desk {
+        display: none;
+    }
+
+    .descricao {
+        text-align: center
+    }
+
+}
+
+@media (min-width: 576px) {
+    #navbar_cell {
+        display: none;
+    }
+
+    #navbar_desk {
+        display: inherit;
+    }
+
+    .descricao {
+        text-align: center
+    }
+
+    .cell {
+        display: none !important;
+    }
+}
